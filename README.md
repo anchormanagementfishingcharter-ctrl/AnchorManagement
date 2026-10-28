@@ -1,3 +1,19 @@
+# Quick start: GitHub + Vercel (photos, Catch of the Day, admin)
+
+This folder is a complete Next.js project. Push the whole folder to a new GitHub repository.
+
+1. Supabase (free): create a project. SQL editor: run `00-schema.sql`, `01-database.sql`, `02-availability.sql`, `03-tags-media.sql` in order.
+2. Put your logo at `public/logo.png`.
+3. GitHub: create a repository and push this folder (`.env` files are ignored, so no secrets are uploaded).
+4. Vercel: "Add New Project", import the repository, and add these Environment Variables (see `.env.example`):
+   SUPABASE_URL, NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY, ADMIN_PASSWORD, SESSION_SECRET, SITE_URL.
+   The Stripe, email and text settings can wait until you take real reservations (the photo alert quietly does nothing without them).
+5. Deploy. Test: upload a photo at /photos, sign in at /login, approve it under Photos, refresh the home page.
+
+Local test: copy `.env.example` to `.env.local`, fill it in, run `npm install` then `npm run dev`.
+
+---
+
 # Anchor Management: live reservation, payment, deposit hold, alerts
 
 Starting contacts (change later at /admin/settings, no code changes needed):
